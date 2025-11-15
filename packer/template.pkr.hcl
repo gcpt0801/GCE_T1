@@ -33,10 +33,10 @@ build {
   provisioner "shell" {
     inline = [
       "set -e",
-      "apt-get update",
-      "DEBIAN_FRONTEND=noninteractive apt-get install -y apache2",
-      "systemctl enable apache2",
-      "systemctl stop apache2"
+      "sudo apt-get update",
+      "sudo DEBIAN_FRONTEND=noninteractive apt-get install -y apache2",
+      "sudo systemctl enable apache2",
+      "sudo systemctl stop apache2"
     ]
   }
 }
