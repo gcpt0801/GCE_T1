@@ -23,7 +23,6 @@ source "googlecompute" "apache" {
   source_image_family = "ubuntu-2204-lts"
   disk_size           = 10
   image_name          = var.image_name
-  image_family        = "custom-apache"
   ssh_username        = "packer"
 }
 

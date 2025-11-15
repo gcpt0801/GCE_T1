@@ -13,14 +13,9 @@ variable "machine_type" {
 
 }
 variable "image_name" {
-  description = "Custom image name built by Packer (required when use_latest_image is false)"
+  description = "Custom image name built by Packer (required)"
   type        = string
-  default     = ""
-}
-variable "use_latest_image" {
-  description = "If true, uses the latest image from custom-apache family. If false, uses image_name variable"
-  type        = bool
-  default     = false
+  # No default - must be provided via command line or tfvars
 }
 variable "zone" {
   description = "GCP zone"
