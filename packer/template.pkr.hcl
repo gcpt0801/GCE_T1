@@ -35,7 +35,9 @@ build {
       "set -e",
       "sudo apt-get update",
       "sudo DEBIAN_FRONTEND=noninteractive apt-get upgrade -y",
-      "sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --fix-missing mime-support ssl-cert",
+      "sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --fix-missing software-properties-common",
+      "sudo add-apt-repository universe -y",
+      "sudo apt-get update",
       "sudo DEBIAN_FRONTEND=noninteractive apt-get install -y apache2",
       "sudo systemctl enable apache2",
       "sudo systemctl stop apache2"
