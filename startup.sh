@@ -1,10 +1,12 @@
 #!/bin/bash
 set -e
 
-# Update package lists and install Apache non-interactively
-export DEBIAN_FRONTEND=noninteractive
-apt-get update
-apt-get install -y apache2
+# Apache2 is already installed via Packer image
+# This script just ensures it's running and can be used for custom configuration
 
-# Ensure Apache is enabled and started
-systemctl enable --now apache2 || service apache2 start || true
+# Start Apache2 service (already enabled in Packer)
+systemctl start apache2
+
+# Optional: Add your custom website content here
+# Example: Copy custom index.html, configure virtual hosts, etc.
+echo "Apache2 startup complete"
