@@ -38,7 +38,7 @@ jobs:
         working-directory: packer
         run: |
           packer init .
-          packer build -var "project=${{ env.GCP_PROJECT }}" -var "image_name=custom-apache-image-${{ github.run_id }}" template.pkr.hcl
+          packer build -var "project_id=${{ env.GCP_PROJECT }}" -var "image_name=custom-apache-image-${{ github.run_id }}" template.pkr.hcl
 
       - name: Terraform fmt
         run: terraform fmt -check=false

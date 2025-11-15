@@ -1,4 +1,4 @@
-variable "project" {
+variable "project_id" {
   type = string
 }
 
@@ -17,7 +17,7 @@ packer {
 }
 
 source "googlecompute" "apache" {
-  project             = var.project
+  project_id          = var.project_id
   zone                = "us-central1-a"
   machine_type        = "e2-medium"
   source_image_family = "ubuntu-2204-lts"
