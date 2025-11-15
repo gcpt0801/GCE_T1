@@ -34,6 +34,7 @@ build {
     inline = [
       "set -e",
       "sudo apt-get update",
+      "sudo DEBIAN_FRONTEND=noninteractive apt-get upgrade -y",
       "sudo DEBIAN_FRONTEND=noninteractive apt-get install -y apache2",
       "sudo systemctl enable apache2",
       "sudo systemctl stop apache2"
